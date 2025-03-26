@@ -1,1 +1,1 @@
-# Farmer-Support-ChatBot
+#Plagiarism Detector
