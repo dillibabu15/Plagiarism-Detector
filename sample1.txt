@@ -1,0 +1,5 @@
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog. This is a sample text for testing plagiarism detection. 
+Plagiarism is the act of using someone else's work without giving proper credit. 
+It is important to detect plagiarism to maintain academic integrity. 
+This text contains some common phrases that may appear in other documents.

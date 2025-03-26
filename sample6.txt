@@ -1,0 +1,4 @@
+The quick brown fox jumps over the lazy dog. This is a test for the plagiarism detector. 
+Plagiarism can be intentional or unintentional, but both are equally harmful. 
+Educators use plagiarism checkers to ensure students submit original work. 
+This document shares some content with other files for testing purposes.

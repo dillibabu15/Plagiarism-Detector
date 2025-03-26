@@ -1,0 +1,4 @@
+The lazy dog was jumped over by the quick brown fox. This is a sample text. 
+Plagiarism detection involves analyzing text for similarities with other documents. 
+Advanced tools use natural language processing to detect even paraphrased content. 
+This file includes common phrases found in other samples.

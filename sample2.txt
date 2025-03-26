@@ -1,0 +1,5 @@
+A fast brown fox leaps over a sleepy dog.
+A fast brown fox leaps over a sleepy dog. Sample text for testing plagiarism detection. 
+Plagiarism can occur in various forms, such as copying text, ideas, or even code. 
+Detecting plagiarism helps ensure originality and fairness in academic and professional settings. 
+This document includes overlapping content with other samples.

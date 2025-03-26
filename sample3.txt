@@ -1,0 +1,4 @@
+The quick brown fox jumps over the lazy dog. This is another example of text for testing. 
+Plagiarism detection tools use algorithms to compare documents and identify similarities. 
+These tools are essential for educators and researchers to maintain high standards of work. 
+This file shares some phrases with other samples to test the system.

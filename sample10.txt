@@ -1,0 +1,4 @@
+The quick brown fox jumps over the lazy dog. This is a test file for the plagiarism detector. 
+Plagiarism is a growing concern in the digital age, where information is easily accessible. 
+Detecting plagiarism helps protect intellectual property and encourages originality. 
+This document contains overlapping text with other files for testing.

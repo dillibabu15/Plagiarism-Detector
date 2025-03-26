@@ -1,0 +1,4 @@
+A brown fox quickly jumps over the lazy dog. This is a sample text for testing. 
+Plagiarism detection tools compare documents to find matching phrases and sentences. 
+These tools are widely used in universities and publishing houses. 
+This file contains overlapping text with other samples.

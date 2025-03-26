@@ -1,0 +1,4 @@
+The quick brown fox jumps over the lazy dog. This is a sample text for the plagiarism checker. 
+Plagiarism detection is crucial for maintaining the integrity of academic institutions. 
+Tools like Turnitin and Copyscape are widely used for this purpose. 
+This file shares some content with other samples to test the system.
