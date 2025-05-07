@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents - Plagiarism Detector</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --background: #111827;
+            --card-bg: #1f2937;
+            --text: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #374151;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: rgba(31, 41, 55, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar-brand i {
+            color: #ec4899;
+        }
+
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .upload-card {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            background: linear-gradient(to right, var(--primary), #ec4899);
+            color: white;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .file-upload {
+            position: relative;
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary);
+        }
+
+        .file-upload-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .file-instructions {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .file-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+        }
+
+        .upload-info {
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        .selected-files {
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        .file-name {
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .file-name i {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-fingerprint"></i>
+                PlagiarismDetector
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container container">
+        <div class="upload-card">
+            <div class="card-header">
+                <h1><i class="fas fa-upload me-2"></i> Upload Documents</h1>
+            </div>
+            <div class="card-body">
+                <!-- Upload Info -->
+                <div class="upload-info">
+                    <div class="info-title">Supported File Types</div>
+                    <div class="info-item">
+                        <i class="far fa-file-alt"></i> TXT files
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-file-pdf"></i> PDF files
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-file-word"></i> DOCX files
+                    </div>
+                </div>
+                
+                <!-- Upload Form -->
+                <form action="/check" method="post" enctype="multipart/form-data">
+                    <div class="file-upload">
+                        <i class="fas fa-cloud-upload-alt file-upload-icon"></i>
+                        <h3>Drag & Drop Files Here</h3>
+                        <p class="file-instructions">or click to browse (select at least 2 files)</p>
+                        <input type="file" name="files" multiple class="file-input" id="fileInput" accept=".txt,.pdf,.docx">
+                        <div class="selected-files" id="selectedFiles"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search me-2"></i> Check Plagiarism
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Plagiarism Detector. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- File Input Script -->
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const selectedFilesDiv = document.getElementById('selectedFiles');
+            selectedFilesDiv.innerHTML = '';
+            
+            if (this.files.length > 0) {
+                const heading = document.createElement('h5');
+                heading.textContent = 'Selected Files:';
+                selectedFilesDiv.appendChild(heading);
+                
+                for (let i = 0; i < this.files.length; i++) {
+                    const fileDiv = document.createElement('div');
+                    fileDiv.className = 'file-name';
+                    
+                    // Choose icon based on file type
+                    let icon = 'fa-file-alt';
+                    if (this.files[i].name.endsWith('.pdf')) {
+                        icon = 'fa-file-pdf';
+                    } else if (this.files[i].name.endsWith('.docx')) {
+                        icon = 'fa-file-word';
+                    }
+                    
+                    fileDiv.innerHTML = `<i class="far ${icon}"></i> ${this.files[i].name}`;
+                    selectedFilesDiv.appendChild(fileDiv);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
